@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>money management app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=TASA+Explorer:wght@400..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <header>
+        <h1>Money Management</h1>
+        <i class="fa-solid fa-list-check fa-shake fa-2xl"></i>
+        <br><br>
+        <button id="add-transaction-btn">+ ADD TRANSACTION</button>
+    </header>
+    <main>
+        <div class="flex-container">
+            <div class="summary-container">
+                <div class="summary-box">
+                    <h3>INCOME</h3>
+                    <p id="income-amount">₹0.00</p>
+                    <i class="fa fa-arrow-up fa-bounce fa-lg" style="color: #02b638;"></i>
+                </div>
+                <div class="summary-box">
+                    <h3>EXPENSE</h3>
+                    <p id="expense-amount">₹0.00</p>
+                    <i class="fa fa-arrow-down fa-bounce fa-lg" style="color: #f61335;"></i>
+                </div>
+                <div class="summary-box">
+                    <h3>NET BALANCE</h3>
+                    <p id="net-balance">₹0.00</p>
+                </div>
+            </div>
+            <hr>
+            <br><br>
+            <div class="form" id="form">
+                <h1>Add/Filter Transaction</h1>
+                <br><br>
+                <div class="form-container">
+                    <form id="transaction-form" autocomplete="on">
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" placeholder="enter amount" required min="0">
+                        <span class="error-message" id="amount-error"></span>
+                        <br><br>
+
+                        <label id="category">Category:</label>
+                        <input type="radio" name="category" value="income" id="incomeRadio" required> income
+                        <input type="radio" name="category" value="expense" id="expenseRadio" required> expense
+                        <span class="error-message" id="category-error"></span>
+                        <br><br>
+
+                        <label for="subcategory">Sub-Category:</label>
+                        <select id="subcategory">
+                            <option value="">-- Select Sub-Category --</option>
+                        </select>
+                        <span class="error-message" id="subcategory-error"></span>
+                        <br><br>
+
+                        <label for="FromDate">From Date:</label>
+                        <input type="date" id="FromDate">
+                        <span class="error-message" id="from-date-error"></span>
+                        <br><br>
+
+                        <label for="ToDate">To Date:</label>
+                        <input type="date" id="ToDate">
+                        <span class="error-message" id="to-date-error"></span>
+                        <br><br>
+
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" rows="2" cols="20" maxlength="100"
+                            placeholder="short Description"></textarea>
+                        <span class="error-message" id="description-error"></span>
+
+                        <button id="btnAddTask">ADD TRANSACTION</button>
+                        <input type="reset" value="Reset" id="resetBtn">
+                    </form>
+                </div>
+            </div>
+    </main>
+    <div class="filter-button-container">
+        <button id="sortNewestBtn">Sort by Newest</button>
+        <button id="sortOldestBtn">Sort by Oldest</button>
+    </div>
+    <div class="transaction-history-section">
+        <h2>TRANSACTION HISTORY</h2>
+        <ul class="transactionhistory">
+            <!-- Transaction items will be rendered here -->
+        </ul>
+        <template id="transaction-template">
+            <li>
+                <div class="task-info">
+                    <h3 id="tname"></h3>
+                    <p id="tdesc"></p>
+                    <small id="tdatepriority"></small>
+                </div>
+                <div class="actions">
+                    <button class="edit-btn" id="btnEditTask">Edit</button>
+                    <button class="delete-btn" id="btnDeleteTask">Delete</button>
+                </div>
+            </li>
+        </template>
+    </div>
+
+    <script src="buttons.js"></script>
+    <script src="formvalidation.js"></script>
+    <script src="form.js"></script>
+    <script src="flexbox.js"></script>
+</body>
+
+</html>

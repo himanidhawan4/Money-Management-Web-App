@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    color: white;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    text-decoration: underline;
+}
+
+/* Styles for the summary section (Income, Expense, Net Balance) */
+.summary-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 20px;
+}
+
+.summary-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1; /* Added to make boxes fill the space */
+    display: flex; /* Added for better content alignment */
+    flex-direction: column;
+}
+
+.summary-box p {
+    font-size: 1em;
+    color: #555;
+}
+
+.summary-box h2 {
+    font-size: 1.5em; /* Adjusted to a more readable size */
+    margin-top: 10px;
+}
+
+#income-amount {
+    color: green;
+}
+
+#expense-amount {
+    color: rgba(255, 0, 0, 0.856);
+}
+
+#net-balance {
+    color: #310d8b;
+}
+
+/* Form container and its elements styling */
+.form {
+    background-color: rgb(126, 164, 224);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Added padding to prevent content from touching the edges */
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+    /* Ensures the message appears on a new line */
+}
+
+.invalid-field {
+    border: 2px solid red;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Transaction history section */
+.transactionhistory li {
+    background: #fafafa;
+    padding: 15px;
+    border-left: 5px solid #2ecc71;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    position: relative;
+    margin-bottom: 15px; /* Added margin for spacing between items */
+}
+
+.transactionhistory {
+    flex-grow: 1;
+    margin-top: 20px;
+}
+
+.transactionhistory h3 {
+    margin-bottom: 6px;
+}
+
+.transactionhistory p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.transactionhistory small {
+    font-size: 12px;
+    color: #888;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.actions button {
+    display: flex;
+}
+ 
